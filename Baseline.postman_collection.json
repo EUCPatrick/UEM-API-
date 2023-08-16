@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "0acbbfc4-d922-4693-927a-b6a09c08000d",
+		"name": "Baseline Export",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8913716"
+	},
+	"item": [
+		{
+			"name": "Step 2: get the OG UUID from the OG ID Numeric",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "aw-tenant-code",
+						"value": "{{Tentant}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic {{Auth}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/v1/system/groups/{{OG-IDNumeric}}",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"v1",
+						"system",
+						"groups",
+						"{{OG-IDNumeric}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 3: Get All Baselines Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{Auth}}",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;version=3"
+					},
+					{
+						"key": "aw-tenant-code",
+						"value": "{{Tentant}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/mdm/groups/{{Group-UUID}}/baselines",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mdm",
+						"groups",
+						"{{Group-UUID}}",
+						"baselines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 4: Get Baseline Settings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{Auth}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;version=3"
+					},
+					{
+						"key": "aw-tenant-code",
+						"value": "{{Tentant}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/mam/blobs/downloadblob/{{BaselineBlob}}/",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mam",
+						"blobs",
+						"downloadblob",
+						"{{BaselineBlob}}",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

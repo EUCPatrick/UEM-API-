@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "96fefe48-4a4f-49f0-be4a-9a954410dcb0",
+		"name": "Conditional Access API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8913716"
+	},
+	"item": [
+		{
+			"name": "Get Device Conditional Access Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{Auth}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "aw-tenant-code",
+						"value": "{{Tentant}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/mdm/devices/{{Device-UUID}}/conditional-access-device-registration-information",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mdm",
+						"devices",
+						"{{Device-UUID}}",
+						"conditional-access-device-registration-information"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Device Conditional Status Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{Auth}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "aw-tenant-code",
+								"value": "{{Tentant}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{API}}/API/mdm/devices/{{Device-UUID}}/conditional-access-device-registration-information",
+							"protocol": "https",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"API",
+								"mdm",
+								"devices",
+								"{{Device-UUID}}",
+								"conditional-access-device-registration-information"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Correlation-ID",
+							"value": "50d19c6b-d24b-4a63-a8cd-90833138eb5b"
+						},
+						{
+							"key": "X-Api-Version",
+							"value": "v1"
+						},
+						{
+							"key": "api-supported-versions",
+							"value": "1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 07:06:01 GMT"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"partner_device_id\": \"00000000-0000-0000-0000-000000000000\",\n        \"partner_user_id\": \"00000000-0000-0000-0000-000000000000\",\n        \"partner_tenant_id\": \"00000000-0000-0000-0000-000000000000\",\n        \"partner_type\": \"Microsoft\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

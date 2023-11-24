@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "2599b87b-b508-42f5-b454-33a16bbe28e9",
+		"name": "Access SAML Groups JIT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8913716"
+	},
+	"item": [
+		{
+			"name": "Get all Federated IDPs",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.vmware.vidm.federation.samlidentityprovider+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{Access}}/federation/identityproviders/",
+					"protocol": "https",
+					"host": [
+						"{{Access}}"
+					],
+					"path": [
+						"federation",
+						"identityproviders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Federated IDP Settings ",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.vmware.vidm.federation.samlidentityprovider+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{Access}}/federation/identityproviders/{{IDP}}",
+					"protocol": "https",
+					"host": [
+						"{{Access}}"
+					],
+					"path": [
+						"federation",
+						"identityproviders",
+						"{{IDP}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SET Federated IDP Settings ",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.vmware.vidm.federation.samlidentityprovider+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{IDPSettingsNEW}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Access}}/federation/identityproviders/{{IDP}}",
+					"protocol": "https",
+					"host": [
+						"{{Access}}"
+					],
+					"path": [
+						"federation",
+						"identityproviders",
+						"{{IDP}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

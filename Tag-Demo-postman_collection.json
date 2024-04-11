@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "4ddea405-d01a-449e-8c24-46d14550df43",
+		"name": "Search by Serial , get TAGs and add Tag ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8913716"
+	},
+	"item": [
+		{
+			"name": "search by Serial Details",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{USERAPI}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{PWAPI}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{Auth}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "aw-tenant-code",
+						"value": "{{Tentant}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/mdm/devices?searchby=SerialNumber&id={{Serial}}",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mdm",
+						"devices"
+					],
+					"query": [
+						{
+							"key": "searchby",
+							"value": "SerialNumber"
+						},
+						{
+							"key": "id",
+							"value": "{{Serial}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add TAG by UUIDs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{USERAPI}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{PWAPI}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{Auth}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "aw-tenant-code",
+						"value": "{{Tentant}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/mdm/devices/{{Device-UUID}}/tags/{{TAG-UUID}}",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mdm",
+						"devices",
+						"{{Device-UUID}}",
+						"tags",
+						"{{TAG-UUID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get TAGs by Device UUIDs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{USERAPI}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{PWAPI}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{Auth}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "aw-tenant-code",
+						"value": "{{Tentant}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{API}}/API/mdm/devices/{{Device-UUID}}/tags",
+					"protocol": "https",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"API",
+						"mdm",
+						"devices",
+						"{{Device-UUID}}",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
